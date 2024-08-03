@@ -11,7 +11,7 @@
         <section>
             <h1 class="filters-title">Filmų Sąrašo Filtravimas</h1>
             <div class="filters-form-container">
-                <form method="post" class="filters">
+                <form action="submitFilters" method="post" class="filters">
                     <div class="filter-name">
                         <label for="name">Pavadinimas</label>
                         <input id="name" name="name" type="text">
@@ -22,7 +22,7 @@
                             <option value="more">daugiau</option>
                             <option value="less">mažiau</option>
                         </select>
-                        <input class="runtime-input" id="runtimeTo" name="runtimeTo" type="text" required="">
+                        <input class="runtime-input" id="runtimeTo" name="runtimeTo" type="text">
                         <span>min.</span>
                     </div>
                     <input type="submit" value="Filtruoti">

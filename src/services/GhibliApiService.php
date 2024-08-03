@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace src\services;
 
+require_once '../src/models/Movie.php';
+
 use src\models\Movie;
 
 class GhibliApiService {

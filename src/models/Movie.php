@@ -4,13 +4,13 @@ declare(strict_types=1);
 namespace src\models;
 
 class Movie {
-    private String $id;
-    private String $title;
-    private String $image;
-    private String $description;
-    private int $running_time;
+    private string $id;
+    private string $title;
+    private string $image;
+    private string $description;
+    private string $running_time;
 
-    public function __construct(string $id, string $title, string $image, string $description, int $running_time) {
+    public function __construct(string $id, string $title, string $image, string $description, string $running_time) {
         $this->id = $id;
         $this->title = $title;
         $this->image = $image;
@@ -34,7 +34,7 @@ class Movie {
         return $this->description;
     }
 
-    public function getRunningTime(): int{
+    public function getRunningTime(): string{
         return $this->running_time;
     }
 }

@@ -16,7 +16,7 @@ class ControllerGet {
 
     public function notFound() {
         ob_start();
-        echo '<h1>404 Not Found</h1>';
+        include '../src/views/notFound.html';
         return ob_get_clean();
     }
 }

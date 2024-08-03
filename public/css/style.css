@@ -46,6 +46,7 @@
 
 .runtime-input {
     width: 10%;
+    min-width: 50px;
 }
 
 .main-container {
@@ -95,8 +96,15 @@
     text-align: center;
     font-weight: bold;
     font-size: 25px;
+    margin-top: 25px;
 }
 
 .movie-card-description {
     font-size: 20px;
+}
+
+.page-not-found {
+    font-size: xx-large;
+    font-weight: bold;
+    padding: inherit;
 }

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace src\models;
+
 class Movie {
     private String $id;
     private String $title;

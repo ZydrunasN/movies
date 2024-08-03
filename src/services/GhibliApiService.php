@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+namespace src\services;
+
 use src\models\Movie;
 
 class GhibliApiService {
@@ -8,10 +10,34 @@ class GhibliApiService {
     private const URL = "https://ghibliapi.dev/films?limit=200";
 
 
-    public function apiCall(): Movie {
+    public function apiCall(): array {
         $json = file_get_contents(self::URL);
+        
+        if ($json === false) {
+            error_log("Failed to fetch data from API: " . self::URL);
+            return [];
+        }
+
         $data = json_decode($json, true);
-    
-        return new Movie($data['id'], $data['title'], $data['image'],$data["description"],$data["running_time"]);
+
+        if (!is_array($data)) {
+            error_log("Invalid data format received from API:" . self::URL);
+            return [];
+        }
+
+        $movies = [];
+        foreach ($data as $item) {
+            if (isset($item['id'], $item['title'], $item['image'], $item['description'], $item['running_time'])) {
+                $movies[] = new Movie(
+                    $item['id'],
+                    $item['title'],
+                    $item['image'],
+                    $item['description'],
+                    $item['running_time']
+                );
+            }
+        }
+
+        return $movies;
     }
 }

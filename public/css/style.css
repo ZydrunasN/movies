@@ -1,5 +1,9 @@
 * { box-sizing: border-box }
 
+body {
+    background-color:linen;
+}
+
 .filters {
     display: flex;
     flex-direction: column;
